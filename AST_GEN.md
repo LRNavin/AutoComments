@@ -2,6 +2,8 @@
 
 ## Generation of AST - STEPS:
 
+Before everything, extract - 'data.7z' in data folder
+
 STEP 1 - Run this, python preproc/java_files_creator.py
 
 STEP 2 - Run this, bash preproc/preprocess_custom.sh
