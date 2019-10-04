@@ -32,6 +32,7 @@ def process_file(file_path, data_file_role, dataset_name, max_contexts, max_data
     with open(output_path, 'w') as outfile:
         with open(file_path, 'r') as file:
             for line in file:
+                print(line)
                 parts = line.rstrip('\n').split(' ')
                 target_name = parts[0]
                 contexts = parts[1:]
