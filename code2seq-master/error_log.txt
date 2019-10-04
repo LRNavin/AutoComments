@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "JavaExtractor/extract.py", line 94, in <module>
+    subdirs = get_immediate_subdirectories(args.dir)
+  File "JavaExtractor/extract.py", line 14, in get_immediate_subdirectories
+    return [(os.path.join(a_dir, name)) for name in os.listdir(a_dir)
+FileNotFoundError: [Errno 2] No such file or directory: 'java_code_dat,.a/'
+Traceback (most recent call last):
+  File "JavaExtractor/extract.py", line 94, in <module>
+    subdirs = get_immediate_subdirectories(args.dir)
+  File "JavaExtractor/extract.py", line 14, in get_immediate_subdirectories
+    return [(os.path.join(a_dir, name)) for name in os.listdir(a_dir)
+FileNotFoundError: [Errno 2] No such file or directory: 'javafg_code_data'
