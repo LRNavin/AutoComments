@@ -34,7 +34,7 @@ def extract_replacements(to_write_path, code, comment):
     decl = codecopy.split("\n")[0]
     varDecl = re.findall("\((.*?)\)", decl)[0]
     varList = varDecl.split(",")
-    if(varList[0] == "" and len(varList) == 1):
+    if True:#(varList[0] == "" and len(varList) == 1):
         save_comment_in_txtfile(to_write_path, comment)
         save_code_in_javafile(to_write_path, code)
         return
@@ -63,13 +63,13 @@ def extract_replacements(to_write_path, code, comment):
 for file in raw_data_files:
     curr_base_folder = base_folder + file
     os.mkdir(curr_base_folder)
-    print("Extracting File - {file}")
+    print(f"Extracting File - {file}")
     file_path = raw_data_folder + file + ".json"
     with open(file_path, 'r') as f:
         for index, line in enumerate(f):
             if not get_ast_full_file and index == 100:
                 break
-            print("Writing Java Snippet No:{index}")
+            print(f"Writing Java Snippet No:{index}")
             to_write_path = curr_base_folder + '/' + sub_folder + str(index)
             os.mkdir(to_write_path)
             code = json.loads(line)["code"]
