@@ -21,9 +21,15 @@
 #   recommended to use a multi-core machine for the preprocessing 
 #   step and set this value to the number of cores.
 # PYTHON - python3 interpreter alias.
-TRAIN_DIR=JavaExtractor/JPredict/src/main/java/JavaExtractor/Common
-VAL_DIR=JavaExtractor/JPredict/src/main/java/JavaExtractor/Common
-TEST_DIR=JavaExtractor/JPredict/src/main/java/JavaExtractor/Common
+
+#TRAIN_DIR=JavaExtractor/JPredict/src/main/java/JavaExtractor/Common
+#VAL_DIR=JavaExtractor/JPredict/src/main/java/JavaExtractor/Common
+#TEST_DIR=JavaExtractor/JPredict/src/main/java/JavaExtractor/Common
+
+TRAIN_DIR=../java_code_train
+VAL_DIR=../java_code_valid
+TEST_DIR=../java_code_test
+
 DATASET_NAME=my_dataset
 MAX_DATA_CONTEXTS=1000
 MAX_CONTEXTS=200
@@ -37,6 +43,8 @@ TRAIN_DATA_FILE=${DATASET_NAME}.train.raw.txt
 VAL_DATA_FILE=${DATASET_NAME}.val.raw.txt
 TEST_DATA_FILE=${DATASET_NAME}.test.raw.txt
 EXTRACTOR_JAR=CSharpExtractor/CSharpExtractor/Extractor/Extractor.csproj
+
+#EXTRACTOR_JAR=JavaExtractor/JPredict/target/JavaExtractor-0.0.1-SNAPSHOT.jar
 
 mkdir -p data
 mkdir -p data/${DATASET_NAME}

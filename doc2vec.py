@@ -6,7 +6,7 @@
 from gensim.models.doc2vec import Doc2Vec
 
 # path to pre-trained model
-pretrained_model = 'enwiki_dbow/doc2vec.bin'
+pretrained_model = 'apnews_dbow/doc2vec.bin'
 model = Doc2Vec.load(pretrained_model)
 
 

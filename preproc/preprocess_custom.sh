@@ -38,7 +38,8 @@ PYTHON=python3
 TRAIN_DATA_FILE=${DATASET_NAME}.train.raw.txt
 VAL_DATA_FILE=${DATASET_NAME}.val.raw.txt
 TEST_DATA_FILE=${DATASET_NAME}.test.raw.txt
-EXTRACTOR_JAR=JavaExtractor/JPredict/target/JavaExtractor-0.0.1-SNAPSHOT.jar
+#EXTRACTOR_JAR=JavaExtractor/JPredict/target/JavaExtractor-0.0.1-SNAPSHOT.jar
+EXTRACTOR_JAR=JavaExtractor/JPredict/target/JavaExtractor.jar
 
 mkdir -p data
 mkdir -p data/${DATASET_NAME}
