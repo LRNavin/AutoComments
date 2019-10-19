@@ -171,10 +171,11 @@ class FeatureExtractor {
             String currentNodeType = currentNode.getUserData(Common.PropertyKey).getType();
             String parentRawType = currentNode.getParentNode().getUserData(Common.PropertyKey).getRawType();
             if(i != 0 && s_ChildOfVarDec.contains(currentNodeType)){
-                i--;
-                currentNode = sourceStack.get(i);
-                childId = Common.EmptyString;
-                currentNodeType = currentNode.getUserData(Common.PropertyKey).getType();
+                // i--;
+                // currentNode = sourceStack.get(i);
+                // childId = Common.EmptyString;
+                // currentNodeType = currentNode.getUserData(Common.PropertyKey).getType();
+                
             }
             
             if (i == 0 || s_ParentTypeToAddChildId.contains(parentRawType)) {
