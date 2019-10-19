@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
@@ -48,6 +49,7 @@ class ExtractFeaturesTask implements Callable<Void> {
 
     private ArrayList<ProgramFeatures> extractSingleFile() throws IOException {
         String code;
+        String comment;
 
         if (m_CommandLineValues.MaxFileLength > 0 &&
                 Files.lines(filePath, Charset.defaultCharset()).count() > m_CommandLineValues.MaxFileLength) {
@@ -59,9 +61,21 @@ class ExtractFeaturesTask implements Callable<Void> {
             e.printStackTrace();
             code = Common.EmptyString;
         }
+
+        if (code == Common.EmptyString){
+            comment = Common.EmptyString;
+        }
+        else {
+            String commentPath = filePath.toString();
+            commentPath = commentPath.replace('\\', '/');
+            int lst = commentPath.lastIndexOf("/");
+            commentPath = commentPath.replace(commentPath.substring(lst + 1), "comment.txt");
+            Path pathToComment = Paths.get(commentPath);
+            comment = new String(Files.readAllBytes(pathToComment));
+        }
         FeatureExtractor featureExtractor = new FeatureExtractor(m_CommandLineValues);
 
-        return featureExtractor.extractFeatures(code);
+        return featureExtractor.extractFeatures(code, comment);
     }
 
     public String featuresToString(ArrayList<ProgramFeatures> features) {
