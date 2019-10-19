@@ -1,0 +1,3 @@
+public static SM_SYSTEM_MESSAGE STR_SKILL_SUCC_DispelNPCBuff_A_TO_SELF(String VAR0,String VAR1){
+  return new SM_SYSTEM_MESSAGE(1201257,VAR0,VAR1);
+}

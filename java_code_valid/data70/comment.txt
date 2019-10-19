@@ -1,0 +1,1 @@
+Constructs a new NamingException with an VAR0. All unspecified fields are set to null.

@@ -1,0 +1,1 @@
+Returns true if the user has typed a key (that has not yet been processed).

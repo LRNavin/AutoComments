@@ -1,0 +1,1 @@
+Asserts that a VAR1 is false. If it isn't it throws an AssertionFailedError with the given VAR0.

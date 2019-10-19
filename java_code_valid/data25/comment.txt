@@ -1,0 +1,1 @@
+Returns an iterator over the elements in this list in proper sequence. <p>The returned iterator is <a href="#fail-fast"><i>fail-fast</i></a>.

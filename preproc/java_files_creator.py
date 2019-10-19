@@ -54,10 +54,10 @@ def extract_replacements(to_write_path, code, comment):
         save_comment_in_txtfile(to_write_path, comment)
         save_code_in_javafile(to_write_path, code)
     
-        fEnc = open(to_write_path + "/encodeDict" , "bw")
+        fEnc = open(to_write_path + "/encodeDict" , "wb")
         pickle.dump(varEncDict, fEnc)
 
-        fDec = open(to_write_path + "/decodeDict", "bw")
+        fDec = open(to_write_path + "/decodeDict", "wb")
         pickle.dump(varDecDict, fDec)
 
 for file in raw_data_files:

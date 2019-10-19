@@ -1,0 +1,1 @@
+Iterates over the children of a node in the operand tree and generates translations for them.

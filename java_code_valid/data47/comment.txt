@@ -1,0 +1,1 @@
+Sets the input value in the option pane the receiver is providing the look and feel for based on the value in the inputComponent.

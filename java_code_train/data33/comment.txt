@@ -1,0 +1,1 @@
+Checks if the given storage port is part of VArray

@@ -1,0 +1,1 @@
+Encode the given VAR1 of an entry.

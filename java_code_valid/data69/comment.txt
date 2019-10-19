@@ -1,0 +1,1 @@
+Removes the Color Panel specified.

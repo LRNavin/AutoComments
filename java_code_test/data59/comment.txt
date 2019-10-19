@@ -1,0 +1,1 @@
+Checks if there is a transaction conflict between the specified VAR1 and the operation implied by the specified VAR2. VAR2Transaction is not null if VAR2 is under xtn VAR3 is true if the call is on behalf of a shadow VAR1

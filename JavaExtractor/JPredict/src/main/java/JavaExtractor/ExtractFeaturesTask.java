@@ -40,7 +40,7 @@ class ExtractFeaturesTask implements Callable<Void> {
         if (features == null) {
             return;
         }
-
+        //Find out how to itterator over programFeatures
         String toPrint = featuresToString(features);
         if (toPrint.length() > 0) {
             System.out.println(toPrint);
@@ -87,14 +87,11 @@ class ExtractFeaturesTask implements Callable<Void> {
 
         for (ProgramFeatures singleMethodFeatures : features) {
             StringBuilder builder = new StringBuilder();
-
             String toPrint = singleMethodFeatures.toString();
             if (m_CommandLineValues.PrettyPrint) {
                 toPrint = toPrint.replace(" ", "\n\t");
             }
             builder.append(toPrint);
-
-
             methodsOutputs.add(builder.toString());
 
         }

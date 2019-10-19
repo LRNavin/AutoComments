@@ -1,0 +1,3 @@
+public static SM_SYSTEM_MESSAGE STR_SKILL_SUCC_Protect_A_TO_ME(String VAR0,String VAR1){
+  return new SM_SYSTEM_MESSAGE(1200701,VAR0,VAR1);
+}

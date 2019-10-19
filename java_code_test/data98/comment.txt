@@ -1,0 +1,1 @@
+Returns a new matrix representing the adjoint of this matrix.

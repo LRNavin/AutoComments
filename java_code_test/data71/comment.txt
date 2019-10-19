@@ -1,0 +1,1 @@
+Render the URI as a string.

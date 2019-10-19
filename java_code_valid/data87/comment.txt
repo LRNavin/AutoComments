@@ -1,0 +1,1 @@
+Smoothens with a short axis parrallel line to remove a non integer corner of two intersecting diagonal lines.  Returns null, if that is not possible.

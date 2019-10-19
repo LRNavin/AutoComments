@@ -31,7 +31,7 @@ MAX_DATA_CONTEXTS=1000
 MAX_CONTEXTS=200
 SUBTOKEN_VOCAB_SIZE=186277
 TARGET_VOCAB_SIZE=26347
-NUM_THREADS=64
+NUM_THREADS=32
 PYTHON=python3
 ###########################################################
 
@@ -51,7 +51,7 @@ echo "Extracting paths from test set..."
 ${PYTHON} JavaExtractor/extract.py --dir ${TEST_DIR} --max_path_length 8 --max_path_width 2 --num_threads ${NUM_THREADS} --jar ${EXTRACTOR_JAR} > ${TEST_DATA_FILE} 2>> error_log.txt
 echo "Finished extracting paths from test set"
 echo "Extracting paths from training set..."
-${PYTHON} JavaExtractor/extract.py --dir ${TRAIN_DIR} --max_path_length 8 --max_path_width 2 --num_threads ${NUM_THREADS} --jar ${EXTRACTOR_JAR} | shuf > ${TRAIN_DATA_FILE} 2>> error_log.txt
+${PYTHON} JavaExtractor/extract.py --dir ${TRAIN_DIR} --max_path_length 8 --max_path_width 2 --num_threads ${NUM_THREADS} --jar ${EXTRACTOR_JAR} > ${TRAIN_DATA_FILE} 2>> error_log.txt
 echo "Finished extracting paths from training set"
 
 TARGET_HISTOGRAM_FILE=data/${DATASET_NAME}/${DATASET_NAME}.histo.tgt.c2s

@@ -1,0 +1,1 @@
+Configures the value supplier of this source.

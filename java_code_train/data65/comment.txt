@@ -1,0 +1,1 @@
+Create VAR0 with permissions, note that VAR0 name should be unique

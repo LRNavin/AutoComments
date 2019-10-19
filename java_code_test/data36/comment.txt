@@ -1,0 +1,1 @@
+[%SkillCaster] has protected you by using [%SkillName].

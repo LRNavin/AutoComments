@@ -1,0 +1,1 @@
+RVAR0turns truVAR0 if thVAR0 <codVAR0>VAR0</codVAR0> is a valid KVAR0yEvVAR0nt to usVAR0 in procVAR0ssing thVAR0 kVAR0y bindings associatVAR0d with JComponVAR0nts.

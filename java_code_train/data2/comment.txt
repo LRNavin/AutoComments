@@ -1,0 +1,1 @@
+Makes an instance for the given value. This may (but does not necessarily) return an already-allocated instance.

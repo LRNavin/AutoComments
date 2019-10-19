@@ -1,0 +1,1 @@
+Creates the default discrete distribution instance to use in tests.

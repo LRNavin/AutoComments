@@ -1,0 +1,1 @@
+Deregisters the provided root DN with the Directory Server.  This will have no effect if the provided DN is not registered as a root DN.

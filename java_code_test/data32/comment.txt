@@ -1,0 +1,1 @@
+Analyse two object position by coordinates

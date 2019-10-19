@@ -1,0 +1,1 @@
+Flushes and then closes the stats file.

@@ -1,0 +1,1 @@
+Methods converts a decimal number into a binary number as a string

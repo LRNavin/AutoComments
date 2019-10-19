@@ -1,0 +1,1 @@
+Copy from the GUI to the opsw array. <p> Used before write operations start

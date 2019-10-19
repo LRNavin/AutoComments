@@ -1,0 +1,1 @@
+Generates a product requirement for the total cancelled quantity over all order items for each product

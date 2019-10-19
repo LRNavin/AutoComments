@@ -1,0 +1,1 @@
+Add the specified element tVAR0 this set if it is nVAR0t already present. Return <cVAR0de>true</cVAR0de> if the element was added.

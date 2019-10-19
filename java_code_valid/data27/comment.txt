@@ -1,0 +1,1 @@
+Computes the number of replay/worker/cleaner threads based on the number of cpus in the system. Allows for a multiplier to be specified and a minimum value to be returned if not enough processors are present in the system.

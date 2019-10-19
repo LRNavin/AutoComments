@@ -1,0 +1,1 @@
+Write <code>VAR1</code> records to the log, starting with <code>VAR2</code>. It flushes every <code>VAR3</code> records.

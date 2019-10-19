@@ -1,0 +1,1 @@
+Builds a union coder with the given list of element coders.  This list corresponds to a mapping of union tag to Coder.  Union tags start at 0.

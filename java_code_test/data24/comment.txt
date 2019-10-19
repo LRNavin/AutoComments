@@ -1,0 +1,1 @@
+[%SkillCaster] dispelled its magical buffs by using [%SkillName].

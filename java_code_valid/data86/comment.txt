@@ -1,0 +1,1 @@
+Gets the ReadOnly flag, specifying whether or not the field can be changed.

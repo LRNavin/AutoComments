@@ -1,0 +1,1 @@
+Sign part of the XML VAR0ument referred by the supplied VAR4 attribute using enveloped signatures and use exclusive XML canonicalization.

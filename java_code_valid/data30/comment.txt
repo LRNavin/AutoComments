@@ -1,0 +1,1 @@
+Checks, if all items in the group can be moved by shoving obstacle trace aside without creating clearance violations.

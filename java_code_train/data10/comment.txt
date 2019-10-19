@@ -1,0 +1,1 @@
+Assigns the specified VAR2 to the VAR0 according to its VAR1

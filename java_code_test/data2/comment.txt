@@ -1,0 +1,1 @@
+Builds a factory for generating JobRows with a custom function for extracting a userid from a request's SecurityContext.

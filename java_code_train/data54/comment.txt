@@ -1,0 +1,1 @@
+Query if we are using the layout editor panels to build the signal mast logic, blocks, turnouts .

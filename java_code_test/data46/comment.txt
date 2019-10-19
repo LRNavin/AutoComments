@@ -1,0 +1,1 @@
+Migrate a column value as a relation. This creates a target node with the ID of the foreign key and a relation from the given instance to this node.

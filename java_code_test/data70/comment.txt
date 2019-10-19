@@ -1,0 +1,1 @@
+after loadmore ,you should call this method on the UI thread

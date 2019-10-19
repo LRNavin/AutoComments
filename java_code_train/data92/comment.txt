@@ -1,0 +1,1 @@
+Construct and return a Video object with a rnadom name, url, and duration.

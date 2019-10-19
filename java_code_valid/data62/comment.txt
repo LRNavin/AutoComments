@@ -1,0 +1,1 @@
+Reads a 32-bit integer and returns it as a (signed) int. Does overflow checking since java can't handle unsigned numbers.

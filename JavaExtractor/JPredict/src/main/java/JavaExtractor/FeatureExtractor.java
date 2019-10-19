@@ -23,7 +23,10 @@ class FeatureExtractor {
     private final static String upSymbol = "|";
     private final static String downSymbol = "|";
     private static final Set<String> s_ParentTypeToAddChildId = Stream
-            .of("AssignExpr", "ArrayAccessExpr", "FieldAccessExpr", "MethodCallExpr")
+            .of("AssignExpr", "ArrayAccessExpr", "FieldAccessExpr")
+            .collect(Collectors.toCollection(HashSet::new));
+    private static final Set<String> s_ChildOfVarDec = Stream
+            .of("VariableDeclarationExpr", "VariableDeclaratorId","VariableDeclarator")
             .collect(Collectors.toCollection(HashSet::new));
     private final CommandLineValues m_CommandLineValues;
 
@@ -43,11 +46,22 @@ class FeatureExtractor {
 
     public ArrayList<ProgramFeatures> extractFeatures(String code, String comment) {
         CompilationUnit m_CompilationUnit = parseFileWithRetries(code);
+        // m_CompilationUnit.walk(node -> {
+        //     String identifier = "";
+        //     if (node instanceof NodeWithIdentifier)
+        //         identifier = ((NodeWithIdentifier<?>) node).getIdentifier();
+        //     System.out.printf("%-28s %-12s %s%n",
+        //                       node.getClass().getSimpleName(),
+        //                       identifier,
+        //                       node.toString().replaceFirst("(?s)\\R.*", "..."));
+		// });
         FunctionVisitor functionVisitor = new FunctionVisitor(m_CommandLineValues);
 
         functionVisitor.visit(m_CompilationUnit, comment);
 
         ArrayList<MethodContent> methods = functionVisitor.getMethodContents();
+
+
 
         return generatePathFeatures(methods);
     }
@@ -73,6 +87,21 @@ class FeatureExtractor {
                 parsed = JavaParser.parse(content);
             }
         }
+        //final compilationUnit?
+
+        // System.out.println("here is a compilation unit thingemajig");
+
+        // System.out.printf("%-28s %-12s %s%n", "Node.class.simpleName", "Identifier", "Node.toString()");
+        // System.out.printf("%-28s %-12s %s%n", "=====================", "==========", "===============");
+	    // parsed.walk(node -> {
+        //     String identifier = "";
+        //     if (node instanceof NodeWithIdentifier)
+        //         identifier = ((NodeWithIdentifier<?>) node).getIdentifier();
+        //     System.out.printf("%-28s %-12s %s%n",
+        //                       node.getClass().getSimpleName(),
+        //                       identifier,
+        //                       node.toString().replaceFirst("(?s)\\R.*", "..."));
+		// });
 
         return parsed;
     }
@@ -139,7 +168,15 @@ class FeatureExtractor {
         for (int i = 0; i < sourceStack.size() - commonPrefix; i++) {
             Node currentNode = sourceStack.get(i);
             String childId = Common.EmptyString;
+            String currentNodeType = currentNode.getUserData(Common.PropertyKey).getType();
             String parentRawType = currentNode.getParentNode().getUserData(Common.PropertyKey).getRawType();
+            if(i != 0 && s_ChildOfVarDec.contains(currentNodeType)){
+                i--;
+                currentNode = sourceStack.get(i);
+                childId = Common.EmptyString;
+                currentNodeType = currentNode.getUserData(Common.PropertyKey).getType();
+            }
+            
             if (i == 0 || s_ParentTypeToAddChildId.contains(parentRawType)) {
                 childId = saturateChildId(currentNode.getUserData(Common.ChildId))
                         .toString();
@@ -165,6 +202,13 @@ class FeatureExtractor {
         for (int i = targetStack.size() - commonPrefix - 1; i >= 0; i--) {
             Node currentNode = targetStack.get(i);
             String childId = Common.EmptyString;
+            String currentNodeType = currentNode.getUserData(Common.PropertyKey).getType();
+            if(i != 0 && s_ChildOfVarDec.contains(currentNodeType)){
+                i--;
+                currentNode = sourceStack.get(i);
+                childId = Common.EmptyString;
+                currentNodeType = currentNode.getUserData(Common.PropertyKey).getType();
+            }
             if (i == 0 || s_ParentTypeToAddChildId.contains(currentNode.getUserData(Common.PropertyKey).getRawType())) {
                 childId = saturateChildId(currentNode.getUserData(Common.ChildId))
                         .toString();

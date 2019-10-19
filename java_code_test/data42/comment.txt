@@ -1,0 +1,1 @@
+Use isSameNode() for testing VAR0 identity if the DOM implementation supports DOM Level 3 core and it isn't the Xerces implementation.

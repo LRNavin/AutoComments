@@ -1,0 +1,1 @@
+Checks that we can still compile a client after a change

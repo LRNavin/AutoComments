@@ -1,0 +1,1 @@
+Construct new auto sorted collection using natural order.

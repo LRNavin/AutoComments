@@ -1,0 +1,1 @@
+Return an iterator over the filter's data types.

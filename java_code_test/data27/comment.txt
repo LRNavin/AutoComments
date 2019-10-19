@@ -1,0 +1,1 @@
+PathElement is the only element having values inside -> nothing to do here. Doesn't care at the current state of parsing.

@@ -1,0 +1,1 @@
+Returns the list of blocks that would have been removed or were removed from the explosion event.

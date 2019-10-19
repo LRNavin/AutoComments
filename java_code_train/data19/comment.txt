@@ -1,0 +1,1 @@
+Start with a buffer of 1KiB, then grow as required.

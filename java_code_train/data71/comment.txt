@@ -1,0 +1,1 @@
+Returns this' media-type (a MIME content-type category) (previously returned a description key)

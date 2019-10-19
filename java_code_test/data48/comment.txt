@@ -1,0 +1,1 @@
+Return the multiplicative inverse of this fraction.

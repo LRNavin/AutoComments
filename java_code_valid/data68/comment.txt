@@ -1,0 +1,1 @@
+Creates a new memory backend which will use the default schema, and will contain the entries read from the provided entry VAR0.

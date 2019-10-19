@@ -1,0 +1,1 @@
+Creates an <code>IntersectionMatrix</code> with the same elements as <code>VAR0</code>.

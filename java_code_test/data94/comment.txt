@@ -1,0 +1,1 @@
+Sets an event listener that uses method name as an adapter

@@ -1,0 +1,1 @@
+new BigDecimal(double value) when value is positive infinity

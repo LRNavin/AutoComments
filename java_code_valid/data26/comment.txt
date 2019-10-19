@@ -1,0 +1,1 @@
+Returns whether or not there exists a purchase of the given product.

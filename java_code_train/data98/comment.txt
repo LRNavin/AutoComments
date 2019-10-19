@@ -1,0 +1,1 @@
+Returns index of maximum element in a given array of VAR0. First maximum is returned.

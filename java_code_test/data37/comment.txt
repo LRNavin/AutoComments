@@ -1,0 +1,1 @@
+Returns the Highlight object corresponding to the selected VAR2ue and VAR1.

@@ -1,0 +1,1 @@
+Creates an audio media that can be played in the background.

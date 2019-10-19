@@ -1,0 +1,1 @@
+Returns whether this item is a candidate for interning. The only interning candidates are ones that <i>only</i> have a non-null set of class annotations, with no other lists.

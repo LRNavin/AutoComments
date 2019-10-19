@@ -1,0 +1,1 @@
+Iterator visits the direct child nodes in the external key ordering.

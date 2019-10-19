@@ -1,0 +1,1 @@
+Indicates whether the given VAR0 is considered expired for the end date of the given date based on the expiry days of the data sets associated with this data element.

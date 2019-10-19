@@ -1,0 +1,1 @@
+Transforms the given block recursively into HTML.

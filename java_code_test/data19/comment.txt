@@ -1,0 +1,1 @@
+Returns a hash code value for this object.

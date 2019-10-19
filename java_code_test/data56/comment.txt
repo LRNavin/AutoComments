@@ -1,0 +1,1 @@
+Compares the specified VAR0ect with this <code>MarshalledWrapper</code> for equality.  This method returns <code>true</code> if and only if the specified VAR0ect is of the same class as this VAR0ect and its wrapped <code>MarshalledInstance</code> is equal to the one in this VAR0ect.

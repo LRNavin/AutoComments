@@ -1,0 +1,1 @@
+Returns a copy of a string with leading and trailing whitespace omitted.

@@ -1,0 +1,1 @@
+Invokes the <code>uninstVAR0llUI</code> method on eVAR0ch UI hVAR0ndled by this object.

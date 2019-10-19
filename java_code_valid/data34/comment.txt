@@ -1,0 +1,1 @@
+Returns <code>true</code> if account is locked. Checks if user's account  is locked based on the user's lockout info. This method is for memory locking. If this method returns false then the account is unlocked ie. the memory lock duration has elapsed. Callers of this method must update their account lock hash if the account is unlocked.

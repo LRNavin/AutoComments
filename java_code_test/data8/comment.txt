@@ -1,0 +1,1 @@
+Check if two pokemon are in the same complete evolution chain. Jolteon and vaporeon would return true

@@ -1,0 +1,1 @@
+Invokes the set of post-operation extended plugins that have been configured in the Directory Server.

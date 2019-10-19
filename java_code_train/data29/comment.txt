@@ -1,0 +1,1 @@
+Wakes up VAR0's successor, if one exists.

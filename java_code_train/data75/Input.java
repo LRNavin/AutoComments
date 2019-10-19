@@ -1,0 +1,2 @@
+public CacheLayer(){
+}

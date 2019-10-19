@@ -1,0 +1,1 @@
+suiteTearDown undo what suiteSetup did: o set the VAR0's logging service's config back, if necessary

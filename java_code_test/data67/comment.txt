@@ -1,0 +1,1 @@
+Whether the map can be zoomed to a rectangular area specified by dragging the mouse while pressing shift. default true

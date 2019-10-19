@@ -1,0 +1,1 @@
+Runs this test from the command line.

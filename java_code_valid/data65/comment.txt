@@ -1,0 +1,1 @@
+Undo the denormalization performed by the XMP used in Acrobat 5.<br>  If a Dublin Core array had only one item, it was serialized as a simple property. <br> The <code>xml:lang</code> attribute was dropped from an <code>alt-text</code> item if the language was <code>x-default</code>.

@@ -1,0 +1,1 @@
+Logs the best individual of the generation.

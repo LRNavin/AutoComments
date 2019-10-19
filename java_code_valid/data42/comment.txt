@@ -1,0 +1,1 @@
+Receive notification of character data inside an element. <p>By default, do nothing.  Application writers may override this method to take specific actions for each chunk of character data (such as adding the data to a node or buffer, or printing it to a file).</p>

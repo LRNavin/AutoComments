@@ -1,0 +1,1 @@
+Called when itrs should stop tracking this iterator, either because there are no more indices to update (cursor < 0 && nextIndex < 0 && lastRet < 0) or as a special exception, when lastRet >= 0, because hasNext() is about to return false for the first time.  Call only from iterating thread.

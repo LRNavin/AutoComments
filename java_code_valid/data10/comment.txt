@@ -1,0 +1,1 @@
+Advances the position until after the next newline character. If the line is terminated by "\r\n", the '\n' must be consumed as whitespace by the caller.
