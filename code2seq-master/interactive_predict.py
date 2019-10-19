@@ -63,13 +63,18 @@ class InteractivePredictor:
                 predict_lines, pc_info_dict = self.path_extractor.extract_paths(user_input)
             except ValueError:
                 continue
+
             # Navin's Modif
             if self.test_extractor:
                 print("Testing Extracted ASTs")
-                predict_lines = [self.read_file("data/sample_set/sample_set.train.c2s")[1].replace("\n","")] # Take first Line
-            print(f"Path Extractor o/p - \n {predict_lines}")
+                predict_lines = [self.read_file("../data/auto_comment_dataset/auto_comment_dataset.test.c2s")[1].replace("\n","")] # Take first Line
+
+            # print(f"Path Extractor o/p - \n {predict_lines}")
+
             model_results = self.model.predict(predict_lines)
-            print(f"Model Resutls -------- \n{model_results}")
+
+            # print(f"Model Resutls -------- \n{model_results}")
+
             prediction_results = Common.parse_results(model_results, pc_info_dict, topk=SHOW_TOP_CONTEXTS)
             for index, method_prediction in prediction_results.items():
                 print('Original name:\t' + method_prediction.original_name)

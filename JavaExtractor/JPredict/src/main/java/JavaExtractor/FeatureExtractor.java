@@ -41,11 +41,11 @@ class FeatureExtractor {
         return upStack;
     }
 
-    public ArrayList<ProgramFeatures> extractFeatures(String code) {
+    public ArrayList<ProgramFeatures> extractFeatures(String code, String comment) {
         CompilationUnit m_CompilationUnit = parseFileWithRetries(code);
         FunctionVisitor functionVisitor = new FunctionVisitor(m_CommandLineValues);
 
-        functionVisitor.visit(m_CompilationUnit, null);
+        functionVisitor.visit(m_CompilationUnit, comment);
 
         ArrayList<MethodContent> methods = functionVisitor.getMethodContents();
 

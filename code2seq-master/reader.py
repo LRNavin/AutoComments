@@ -75,6 +75,10 @@ class Reader:
         row_parts = list(row_parts)
         word = row_parts[0]  # (, )
 
+        # print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ IN READER FILE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+        # print(word)
+        # print(row_parts)
+
         if not self.is_evaluating and self.config.RANDOM_CONTEXTS:
             all_contexts = tf.stack(row_parts[1:])
             all_contexts_padded = tf.concat([all_contexts, [self.context_pad]], axis=-1)
@@ -100,11 +104,20 @@ class Reader:
         split_target_labels = tf.string_split(tf.expand_dims(word, -1), delimiter='|')
         target_dense_shape = [1, tf.maximum(tf.to_int64(self.config.MAX_TARGET_PARTS),
                                             split_target_labels.dense_shape[1] + 1)]
+
+        # print(f"SPLIT Target - {split_target_labels}")
+
         sparse_target_labels = tf.sparse.SparseTensor(indices=split_target_labels.indices,
                                                       values=split_target_labels.values,
                                                       dense_shape=target_dense_shape)
+
+        # print(f"SPLIT Target - {split_target_labels}")
+
         dense_target_label = tf.reshape(tf.sparse.to_dense(sp_input=sparse_target_labels,
                                                            default_value=Common.PAD), [-1])
+
+        # print(f"Dense Target Label Target - {dense_target_label}")
+
         index_of_blank = tf.where(tf.equal(dense_target_label, Common.PAD))
         target_length = tf.reduce_min(index_of_blank)
         dense_target_label = dense_target_label[:self.config.MAX_TARGET_PARTS]
@@ -112,6 +125,8 @@ class Reader:
                                                   clip_value_max=self.config.MAX_TARGET_PARTS)
         target_word_labels = tf.concat([
             self.target_table.lookup(dense_target_label), [0]], axis=-1)  # (max_target_parts + 1) of int
+
+        # print(f"Dense Target Label Target - {target_word_labels}")
 
         path_source_strings = tf.slice(dense_split_contexts, [0, 0], [self.config.MAX_CONTEXTS, 1])  # (max_contexts, 1)
         flat_source_strings = tf.reshape(path_source_strings, [-1])  # (max_contexts)

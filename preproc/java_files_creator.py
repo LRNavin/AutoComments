@@ -34,7 +34,7 @@ def extract_replacements(to_write_path, code, comment):
     decl = codecopy.split("\n")[0]
     varDecl = re.findall("\((.*?)\)", decl)[0]
     varList = varDecl.split(",")
-    if True:#(varList[0] == "" and len(varList) == 1):
+    if (varList[0] == "" and len(varList) == 1):
         save_comment_in_txtfile(to_write_path, comment)
         save_code_in_javafile(to_write_path, code)
         return
@@ -54,10 +54,10 @@ def extract_replacements(to_write_path, code, comment):
         save_comment_in_txtfile(to_write_path, comment)
         save_code_in_javafile(to_write_path, code)
     
-        fEnc = open(to_write_path + "/encodeDict" , "w")
+        fEnc = open(to_write_path + "/encodeDict" , "bw")
         pickle.dump(varEncDict, fEnc)
 
-        fDec = open(to_write_path + "/decodeDict", "w")
+        fDec = open(to_write_path + "/decodeDict", "bw")
         pickle.dump(varDecDict, fDec)
 
 for file in raw_data_files:

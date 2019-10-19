@@ -28,8 +28,10 @@ class Model:
         self.subtoken_to_index = None
 
         if config.LOAD_PATH:
+            print("Loading Model ..................")
             self.load_model(sess=None)
         else:
+            print("GOING TO BUILD VOCAB @ Coz Training Phase ==============")
             with open('{}.dict.c2s'.format(config.TRAIN_PATH), 'rb') as file:
                 subtoken_to_count = pickle.load(file)
                 node_to_count = pickle.load(file)
@@ -54,9 +56,9 @@ class Model:
                 Common.load_vocab_from_dict(node_to_count, add_values=[Common.PAD, Common.UNK], max_size=None)
             print('Loaded nodes vocab. size: %d' % self.nodes_vocab_size)
 
-            print("********************* Target Labels DETAILS *********************")
-            print(self.target_to_index)
-            print(target_to_count)
+            # print("********************* Target Labels DETAILS *********************")
+            # print(self.target_to_index)
+            # print(target_to_count)
 
             self.epochs_trained = 0
 
@@ -80,6 +82,8 @@ class Model:
                                           target_to_index=self.target_to_index,
                                           config=self.config)
 
+        print(f"Eval Queue ------ {self.queue_thread}")
+
         optimizer, train_loss = self.build_training_graph(self.queue_thread.get_output())
         self.print_hyperparams()
         print('Number of trainable params:',
@@ -99,12 +103,18 @@ class Model:
                 while True:
                     batch_num += 1
                     _, batch_loss = self.sess.run([optimizer, train_loss])
+
+                    if True: # Print
+                        print("******************** TARGET WORDS EMBEDDING in Training Graph ******************")
+                        var = tf.get_default_graph().get_tensor_by_name('model/TARGET_WORDS_VOCAB:0')
+                        print(var.shape)
+                        with self.sess.as_default(): print(var.eval())
+
                     sum_loss += batch_loss
                     if batch_num % self.num_batches_to_log == 0:
                         self.trace(sum_loss, batch_num, multi_batch_start_time)
                         sum_loss = 0
                         multi_batch_start_time = time.time()
-
 
             except tf.errors.OutOfRangeError:
                 self.epochs_trained += self.config.SAVE_EVERY_EPOCHS
@@ -152,6 +162,7 @@ class Model:
                                             node_to_index=self.node_to_index,
                                             target_to_index=self.target_to_index,
                                             config=self.config, is_evaluating=True)
+
             reader_output = self.eval_queue.get_output()
             self.eval_predicted_indices_op, self.eval_topk_values, _, _ = \
                 self.build_test_graph(reader_output)
@@ -189,6 +200,13 @@ class Model:
                     predicted_indices, true_target_strings, top_values = self.sess.run(
                         [self.eval_predicted_indices_op, self.eval_true_target_strings_op, self.eval_topk_values],
                     )
+
+                    if True:  # Print
+                        print("******************** TARGET WORDS EMBEDDING in Training Graph ******************")
+                        var = tf.get_default_graph().get_tensor_by_name('model/TARGET_WORDS_VOCAB:0')
+                        print(var.shape)
+                        with self.sess.as_default(): print(var.eval())
+
                     true_target_strings = Common.binary_to_string_list(true_target_strings)
                     ref_file.write(
                         '\n'.join(
@@ -339,6 +357,7 @@ class Model:
         path_lengths = input_tensors[reader.PATH_LENGTHS_KEY]
         path_target_lengths = input_tensors[reader.PATH_TARGET_LENGTHS_KEY]
 
+        print("Moving to Scope")
         with tf.variable_scope('model'):
             subtoken_vocab = tf.get_variable('SUBTOKENS_VOCAB',
                                              shape=(self.subtoken_vocab_size, self.config.EMBEDDINGS_SIZE),
@@ -352,11 +371,17 @@ class Model:
                                                  initializer=tf.contrib.layers.variance_scaling_initializer(factor=1.0,
                                                                                                             mode='FAN_OUT',
                                                                                                             uniform=True))
+            # print("****************** ------- TARGET in TRAINING GRAPH -------- ******************")
+            # print(target_words_vocab)
+
             nodes_vocab = tf.get_variable('NODES_VOCAB', shape=(self.nodes_vocab_size, self.config.EMBEDDINGS_SIZE),
                                           dtype=tf.float32,
                                           initializer=tf.contrib.layers.variance_scaling_initializer(factor=1.0,
                                                                                                      mode='FAN_OUT',
                                                                                                      uniform=True))
+
+
+
             # (batch, max_contexts, decoder_size)
             batched_contexts = self.compute_contexts(subtoken_vocab=subtoken_vocab, nodes_vocab=nodes_vocab,
                                                      source_input=path_source_indices, nodes_input=node_indices,
@@ -398,6 +423,11 @@ class Model:
 
     def decode_outputs(self, target_words_vocab, target_input, batch_size, batched_contexts, valid_mask,
                        is_evaluating=False):
+
+        # print("********************************* DECODE PART *********************************")
+        # print(target_words_vocab)
+        # print(target_input)
+
         num_contexts_per_example = tf.count_nonzero(valid_mask, axis=-1)
 
         start_fill = tf.fill([batch_size],
@@ -557,6 +587,8 @@ class Model:
             target_words_vocab = tf.get_variable('TARGET_WORDS_VOCAB',
                                                  shape=(self.target_vocab_size, self.config.EMBEDDINGS_SIZE),
                                                  dtype=tf.float32, trainable=False)
+            print("****************** ------- TARGET in TRAINING GRAPH -------- ******************")
+            print(target_words_vocab)
             nodes_vocab = tf.get_variable('NODES_VOCAB',
                                           shape=(self.nodes_vocab_size, self.config.EMBEDDINGS_SIZE),
                                           dtype=tf.float32, trainable=False)
@@ -587,6 +619,9 @@ class Model:
 
     def predict(self, predict_data_lines):
         if self.predict_queue is None:
+            # print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ IN LOADER MODEL @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+            # print(self.target_to_index)
+
             self.predict_queue = reader.Reader(subtoken_to_index=self.subtoken_to_index,
                                                node_to_index=self.node_to_index,
                                                target_to_index=self.target_to_index,
@@ -606,14 +641,21 @@ class Model:
             self.load_model(self.sess)
 
         results = []
-        # print(f"*********** AST Predict Lines - {len(predict_data_lines)} **************")
+        print(f"*********** AST Predict Lines - {len(predict_data_lines)} **************")
         for line in predict_data_lines:
-            # print(f"The predicted lines - {line}")
             predicted_indices, top_scores, true_target_strings, attention_weights, path_source_string, path_strings, path_target_string = self.sess.run(
                 [self.predict_top_indices_op, self.predict_top_scores_op, self.predict_target_strings_op,
                  self.attention_weights_op,
                  self.predict_source_string, self.predict_path_string, self.predict_path_target_string],
                 feed_dict={self.predict_placeholder: line})
+
+            if True:  # Print
+                print("******************** TARGET WORDS EMBEDDING in Training Graph ******************")
+                var = tf.get_default_graph().get_tensor_by_name('model/TARGET_WORDS_VOCAB:0')
+                print(var.shape)
+                with self.sess.as_default(): print(var.eval())
+
+            # print(f"The predicted lines - {line}")
 
             top_scores = np.squeeze(top_scores, axis=0)
             path_source_string = path_source_string.reshape((-1))
@@ -626,6 +668,7 @@ class Model:
                 predicted_strings = [[self.index_to_target[sugg] for sugg in timestep]
                                      for timestep in predicted_indices]  # (target_length, top-k)  
                 predicted_strings = list(map(list, zip(*predicted_strings)))  # (top-k, target_length)
+                top_scores = [np.exp(np.sum(s)) for s in zip(*top_scores)]
                 top_scores = [np.exp(np.sum(s)) for s in zip(*top_scores)]
             else:
                 predicted_strings = [self.index_to_target[idx]
@@ -693,6 +736,8 @@ class Model:
             self.target_to_index = pickle.load(file)
             self.index_to_target = pickle.load(file)
             self.target_vocab_size = pickle.load(file)
+
+            print(f"Target Vocab Size - {self.target_vocab_size}")
 
             self.node_to_index = pickle.load(file)
             self.index_to_node = pickle.load(file)

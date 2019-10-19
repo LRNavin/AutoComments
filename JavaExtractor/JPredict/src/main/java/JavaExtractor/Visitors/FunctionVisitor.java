@@ -9,6 +9,7 @@ import com.github.javaparser.ast.visitor.VoidVisitorAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 @SuppressWarnings("StringEquality")
 public class FunctionVisitor extends VoidVisitorAdapter<Object> {
@@ -21,18 +22,20 @@ public class FunctionVisitor extends VoidVisitorAdapter<Object> {
 
     @Override
     public void visit(MethodDeclaration node, Object arg) {
-        visitMethod(node);
+        visitMethod(node, arg.toString());
 
         super.visit(node, arg);
     }
 
-    private void visitMethod(MethodDeclaration node) {
+    private void visitMethod(MethodDeclaration node, String comment) {
         LeavesCollectorVisitor leavesCollectorVisitor = new LeavesCollectorVisitor();
         leavesCollectorVisitor.visitDepthFirst(node);
         ArrayList<Node> leaves = leavesCollectorVisitor.getLeaves();
-
-        String normalizedMethodName = Common.normalizeName(node.getName(), Common.BlankWord);
-        ArrayList<String> splitNameParts = Common.splitToSubtokens(node.getName());
+        String[] parts = comment.split(Pattern.quote("."));
+        comment = parts[0];
+        String normalizedMethodName = Common.normalizeName(comment, Common.BlankWord);
+//        String normalizedMethodName = Common.normalizeName(node.getName(), Common.BlankWord);
+        ArrayList<String> splitNameParts = Common.splitToSubtokens(comment);
         String splitName = normalizedMethodName;
         if (splitNameParts.size() > 0) {
             splitName = String.join(Common.internalSeparator, splitNameParts);
