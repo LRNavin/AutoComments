@@ -62,7 +62,7 @@ class FeatureExtractor {
         ArrayList<MethodContent> methods = functionVisitor.getMethodContents();
 
 
-
+	
         return generatePathFeatures(methods);
     }
 
@@ -181,8 +181,13 @@ class FeatureExtractor {
                 childId = saturateChildId(currentNode.getUserData(Common.ChildId))
                         .toString();
             }
-            stringBuilder.add(String.format("%s%s%s",
-                    currentNode.getUserData(Common.PropertyKey).getType(true), childId, upSymbol));
+	    if(!currentNode.getUserData(Common.PropertyKey).getName().matches("^(VAR)[0-9]+")){
+		stringBuilder.add(String.format("%s%s%s",
+						currentNode.getUserData(Common.PropertyKey).getType(true), childId, upSymbol));
+	    } else {
+		stringBuilder.add(String.format("%s%s%s",
+						currentNode.getUserData(Common.PropertyKey).getName(), childId, upSymbol));
+	    }
         }
 
         Node commonNode = sourceStack.get(sourceStack.size() - commonPrefix);
@@ -213,10 +218,16 @@ class FeatureExtractor {
                 childId = saturateChildId(currentNode.getUserData(Common.ChildId))
                         .toString();
             }
+	    //System.out.println("please      " + currentNode.getUserData(Common.PropertyKey).getType(true));
+	    if(!currentNode.getUserData(Common.PropertyKey).getName().matches("^(VAR)[0-9]+")){
             stringBuilder.add(String.format("%s%s%s", downSymbol,
                     currentNode.getUserData(Common.PropertyKey).getType(true), childId));
+	    } else {
+		stringBuilder.add(String.format("%s%s%s", downSymbol,
+						currentNode.getUserData(Common.PropertyKey).getName(), childId));
+	    }
         }
-
+	
         return stringBuilder.toString();
     }
 

@@ -17,6 +17,7 @@ public class LeavesCollectorVisitor extends TreeVisitor {
 
     @Override
     public void process(Node node) {
+
         if (node instanceof Comment) {
             return;
         }
@@ -32,7 +33,7 @@ public class LeavesCollectorVisitor extends TreeVisitor {
         int childId = getChildId(node);
         node.setUserData(Common.ChildId, childId);
         Property property = new Property(node, isLeaf, isGenericParent);
-        node.setUserData(Common.PropertyKey, property);
+	node.setUserData(Common.PropertyKey, property);
     }
 
     private boolean isGenericParent(Node node) {
