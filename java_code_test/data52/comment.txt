@@ -1,1 +1,0 @@
-Only for UTs (for now), as this clears the whole ZK data cache.

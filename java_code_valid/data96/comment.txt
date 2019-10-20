@@ -1,1 +1,0 @@
-Generates an asymmetric key pair in the Android Keystore. Every use of the private key must be authorized by the user authenticating with fingerprint. Public key use is unrestricted.

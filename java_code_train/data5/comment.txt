@@ -1,1 +1,0 @@
-Trims the capacity of this <tt>ArrayHashList</tt> instance to be the list's current size. An application can use this operation to minimize the storage of an <tt>ArrayHashList</tt> instance.

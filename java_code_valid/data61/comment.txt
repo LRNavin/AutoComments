@@ -1,1 +1,0 @@
-Checks if any entry in the string array starts with the specified VAR1

@@ -1,1 +1,0 @@
-Reads the next four bytes as an unsigned value.

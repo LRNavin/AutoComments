@@ -1,1 +1,0 @@
-Opens the camera driver and initializes the hardware parameters.

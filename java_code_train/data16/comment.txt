@@ -1,1 +1,0 @@
-Removes session for a given session ID.

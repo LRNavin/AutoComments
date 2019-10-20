@@ -1,1 +1,0 @@
-Construct a general URI from the given components.

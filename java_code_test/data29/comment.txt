@@ -1,1 +1,0 @@
-Returns the histogram that approximates the join distribution of the field values of query results.

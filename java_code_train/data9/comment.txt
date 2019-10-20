@@ -1,1 +1,0 @@
-Calculate what the U value should consist of given a particular key and document configuration. Correponds to Algorithms 3.4 and 3.5 of the PDF Reference version 1.7

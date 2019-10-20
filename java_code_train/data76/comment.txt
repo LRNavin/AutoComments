@@ -1,1 +1,0 @@
-Build an Android Address object from the Gisgraphy address in JSON format.

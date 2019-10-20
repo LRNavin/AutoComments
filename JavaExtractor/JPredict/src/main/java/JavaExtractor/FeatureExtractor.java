@@ -223,5 +223,4 @@ class FeatureExtractor {
     private Integer saturateChildId(int childId) {
         return Math.min(childId, m_CommandLineValues.MaxChildId);
     }
-
 }

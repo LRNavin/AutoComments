@@ -1,1 +1,0 @@
-Verify ability to delete a list of files.

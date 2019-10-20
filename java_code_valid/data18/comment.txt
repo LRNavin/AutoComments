@@ -1,1 +1,0 @@
-Constructs a ShortLookupTable object from an array of short arrays representing a lookup table for each band.  The VAR0 will be subtracted from the input values before indexing into the arrays.  The number of bands is the length of the data argument.  The data array for each band is stored as a reference.

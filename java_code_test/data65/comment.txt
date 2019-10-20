@@ -1,1 +1,0 @@
-The coordinates of the point from which popups will "open", relative to the icon anchor.

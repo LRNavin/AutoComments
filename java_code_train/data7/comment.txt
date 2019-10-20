@@ -1,1 +1,0 @@
-Removes all parsers from this text area.

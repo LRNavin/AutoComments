@@ -1,1 +1,0 @@
-Internal method that updates the row counts for local data columns.

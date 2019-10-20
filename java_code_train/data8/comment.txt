@@ -1,1 +1,0 @@
-This is the code for the thread. It delivers decisions to the TOM request receiver object (which is the application)

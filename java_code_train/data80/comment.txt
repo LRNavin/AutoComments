@@ -1,1 +1,0 @@
-Return whether this list contains the specified protocol version. SSLv2Hello is not a real protocol version we support, we always return false for it.

@@ -1,1 +1,0 @@
-Returns the "size" of the chromosome, namely, the number of nodes in all of its parsed genes -- does not include the linking functions. 

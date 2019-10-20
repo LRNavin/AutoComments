@@ -1,1 +1,0 @@
-Zooms out by 0.7f, from the charts center. center.

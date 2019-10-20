@@ -1,1 +1,0 @@
-For the given elements and using the given feature computer, create a string representation of the target features.

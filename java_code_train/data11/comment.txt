@@ -1,1 +1,0 @@
-Used to communicate feedback pop-up VAR0s between a plugin tool and the main Whitebox user-interface.

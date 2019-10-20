@@ -1,1 +1,0 @@
-To generate new Star Brick (which generates invincibility star) element in stage. The generated element must be added into <b>SpriteHandler</b> class's <em>STAGE_ELEMENTS</em> list and to the <em>stageContainer</em>.

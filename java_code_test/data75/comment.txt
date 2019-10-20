@@ -1,1 +1,0 @@
-Return a String representation of the contents of the specified VAR0. The String representation consists of a list of the VAR0's elements, enclosed in curly braces (<code>"{}"</code>). Adjacent elements are separated by the characters <code>", "</code> (a comma followed by a space). Returns <code>"null"</code> if <code>VAR0</code> is <code>null</code>.

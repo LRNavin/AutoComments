@@ -1,1 +1,0 @@
-Releases the VAR0 and removes it from the VAR0es being handled by this handler.

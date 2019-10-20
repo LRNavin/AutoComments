@@ -1,1 +1,0 @@
-Frees the page to be returned back to the system. The page is no longer valid and can be re-used the next time the user called allocPage.

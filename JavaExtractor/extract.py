@@ -6,7 +6,6 @@ import os
 import shutil
 import subprocess
 import sys
-import pdb
 from argparse import ArgumentParser
 from threading import Timer
 
@@ -24,7 +23,7 @@ def ParallelExtractDir(args, dir):
 
 
 def ExtractFeaturesForDir(args, dir, prefix):
-    command = ['java', '-Xmx1g', '-XX:MaxNewSize=512m', '-cp', args.jar, 'JavaExtractor.App',
+    command = ['java', '-Xmx100g', '-XX:MaxNewSize=60g', '-cp', args.jar, 'JavaExtractor.App',
                '--max_path_length', str(args.max_path_length), '--max_path_width', str(args.max_path_width),
                '--dir', dir, '--num_threads', str(args.num_threads)]
 

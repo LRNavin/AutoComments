@@ -1,1 +1,0 @@
-Execute an expression in the XPath runtime context, and return the  result of the expression.

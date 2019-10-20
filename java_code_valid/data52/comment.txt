@@ -1,1 +1,0 @@
-Checks that underlying repository is dirty (modified with uncommitted changes).

@@ -1,1 +1,0 @@
-generate new  cursorBox and highlight extractable text, if hardware acceleration off and extraction on<br> and update current cursor box displayed on screen

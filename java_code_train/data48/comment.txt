@@ -1,1 +1,0 @@
-Log a Setup and/or administrative log message for log4jdbc.

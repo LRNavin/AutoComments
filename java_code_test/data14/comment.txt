@@ -1,1 +1,0 @@
-Create a new VisualTable without a parent table.

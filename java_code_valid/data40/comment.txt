@@ -1,1 +1,0 @@
-Initialize all member variables as null

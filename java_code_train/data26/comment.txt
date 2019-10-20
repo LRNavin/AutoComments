@@ -1,1 +1,0 @@
-Evaluates if the Dependency is targeted for a VAR0 type.

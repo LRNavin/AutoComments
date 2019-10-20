@@ -1,1 +1,0 @@
-This method is a callback. Check the user's answer after requesting permission.

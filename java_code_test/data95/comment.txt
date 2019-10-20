@@ -1,1 +1,0 @@
-Calls flushTermination(), flushUpdate(), flushInsert() and shutdown() and waits for all pending tasks to finish. To ensure proper error handling, this method must be called.

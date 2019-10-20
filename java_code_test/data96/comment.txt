@@ -1,1 +1,0 @@
-Notifies that a the VAR1 was created. This is called by the thread creating the VAR1, prior to being given the instance.

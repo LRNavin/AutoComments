@@ -1,1 +1,0 @@
-Decodes the information and returns the Diff.

@@ -1,3 +1,0 @@
-public ObjectFactory(){
-  super(grammarInfo);
-}
