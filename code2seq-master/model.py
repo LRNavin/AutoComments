@@ -82,7 +82,7 @@ class Model:
                                           target_to_index=self.target_to_index,
                                           config=self.config)
 
-        print(f"Eval Queue ------ {self.queue_thread}")
+        # print(f"Eval Queue ------ {self.queue_thread}")
 
         optimizer, train_loss = self.build_training_graph(self.queue_thread.get_output())
         self.print_hyperparams()
@@ -104,7 +104,7 @@ class Model:
                     batch_num += 1
                     _, batch_loss = self.sess.run([optimizer, train_loss])
 
-                    if True: # Print
+                    if False: # Print
                         print("******************** TARGET WORDS EMBEDDING in Training Graph ******************")
                         var = tf.get_default_graph().get_tensor_by_name('model/TARGET_WORDS_VOCAB:0')
                         print(var.shape)
@@ -201,7 +201,7 @@ class Model:
                         [self.eval_predicted_indices_op, self.eval_true_target_strings_op, self.eval_topk_values],
                     )
 
-                    if True:  # Print
+                    if False:  # Print
                         print("******************** TARGET WORDS EMBEDDING in Training Graph ******************")
                         var = tf.get_default_graph().get_tensor_by_name('model/TARGET_WORDS_VOCAB:0')
                         print(var.shape)
@@ -641,7 +641,7 @@ class Model:
             self.load_model(self.sess)
 
         results = []
-        print(f"*********** AST Predict Lines - {len(predict_data_lines)} **************")
+        # print(f"*********** AST Predict Lines - {len(predict_data_lines)} **************")
         for line in predict_data_lines:
             predicted_indices, top_scores, true_target_strings, attention_weights, path_source_string, path_strings, path_target_string = self.sess.run(
                 [self.predict_top_indices_op, self.predict_top_scores_op, self.predict_target_strings_op,
@@ -649,8 +649,8 @@ class Model:
                  self.predict_source_string, self.predict_path_string, self.predict_path_target_string],
                 feed_dict={self.predict_placeholder: line})
 
-            if True:  # Print
-                print("******************** TARGET WORDS EMBEDDING in Training Graph ******************")
+            if False:  # Print
+                print("******************** a EMBEDDING in Training Graph ******************")
                 var = tf.get_default_graph().get_tensor_by_name('model/TARGET_WORDS_VOCAB:0')
                 print(var.shape)
                 with self.sess.as_default(): print(var.eval())
@@ -737,7 +737,7 @@ class Model:
             self.index_to_target = pickle.load(file)
             self.target_vocab_size = pickle.load(file)
 
-            print(f"Target Vocab Size - {self.target_vocab_size}")
+            # print(f"Target Vocab Size - {self.target_vocab_size}")
 
             self.node_to_index = pickle.load(file)
             self.index_to_node = pickle.load(file)
