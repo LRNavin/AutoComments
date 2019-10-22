@@ -1,1 +1,0 @@
-Create Yaml instance. It is safe to create a few instances and use them in different Threads.

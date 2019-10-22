@@ -1,1 +1,0 @@
-Returns whether this potion has an extended duration.

@@ -1,1 +1,0 @@
-is this a critical command that can only be executed when no other command is running?

@@ -1,1 +1,0 @@
-Constructs a new throttling policy that always returns the same throttling VAR0.

@@ -165,25 +165,28 @@ public class Property {
         }
         ArrayList<String> splitNameParts = Common.splitToSubtokens(nameToSplit);
         SplitName = String.join(Common.internalSeparator, splitNameParts);
+	if(!node.toString().matches("^(VAR)[0-9]+")){
+	    String name = Common.normalizeName(node.toString(), Common.BlankWord);
+	    if (name.length() > Common.c_MaxLabelLength) {
+		name = name.substring(0, Common.c_MaxLabelLength);
+	    } else if (node instanceof ClassOrInterfaceType && ((ClassOrInterfaceType) node).isBoxedType()) {
+		name = ((ClassOrInterfaceType) node).toUnboxedType().toString();
+	    }
 
-        String name = Common.normalizeName(node.toString(), Common.BlankWord);
-        if (name.length() > Common.c_MaxLabelLength) {
-            name = name.substring(0, Common.c_MaxLabelLength);
-        } else if (node instanceof ClassOrInterfaceType && ((ClassOrInterfaceType) node).isBoxedType()) {
-            name = ((ClassOrInterfaceType) node).toUnboxedType().toString();
-        }
+	    if (Common.isMethod(node, Type)) {
+		name = SplitName = Common.methodName;
+	    }
 
-        if (Common.isMethod(node, Type)) {
-            name = SplitName = Common.methodName;
-        }
-
-        if (SplitName.length() == 0) {
-            SplitName = name;
-            if (node instanceof IntegerLiteralExpr && !NumericalKeepValues.contains(SplitName)) {
-                // This is a numeric literal, but not in our white list
-                SplitName = "<NUM>";
-            }
-        }
+	    if (SplitName.length() == 0) {
+		SplitName = name;
+		if (node instanceof IntegerLiteralExpr && !NumericalKeepValues.contains(SplitName)) {
+		    // This is a numeric literal, but not in our white list
+		    SplitName = "<NUM>";
+		}
+	    }
+	} else {
+	    SplitName = node.toString();
+	}
     }
 
     public String getRawType() {

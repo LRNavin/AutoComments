@@ -1,1 +1,0 @@
-Invokes all listeners on the Session associated with the event.

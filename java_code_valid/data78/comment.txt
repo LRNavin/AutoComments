@@ -1,1 +1,0 @@
-Paints tVAR5e border of a separator. TVAR5is implementation invokes tVAR5e metVAR5od of tVAR5e same name VAR4itVAR5out tVAR5e VAR6.

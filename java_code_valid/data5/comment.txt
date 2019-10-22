@@ -1,1 +1,0 @@
-Connect to the server, and then try to use some LDAP controls.

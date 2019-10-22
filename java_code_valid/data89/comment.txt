@@ -1,1 +1,0 @@
-Finds the implementation Class object in the specified order.  The specified order is the following: <ol> <li>query the system property using <code>System.getProperty</code> <li>read <code>META-INF/services/<i>VAR0</i></code> file <li>use fallback classname </ol>

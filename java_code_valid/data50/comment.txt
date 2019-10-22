@@ -1,1 +1,0 @@
-<p>Constructs an <code>RMIConnector</code> using the given RMI stub.

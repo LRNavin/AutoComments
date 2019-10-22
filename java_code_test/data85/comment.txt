@@ -1,1 +1,0 @@
-Returns <tt>true</tt> if this type of attribute is unknown. The default implementation of this method always returns <tt>true</tt>.

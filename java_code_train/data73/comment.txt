@@ -1,1 +1,0 @@
-If the VAR0 is a .gwt.xml file and we're in a gwt-enabled project, return true.

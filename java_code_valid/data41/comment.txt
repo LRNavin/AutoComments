@@ -1,1 +1,0 @@
-Shutdown the text writer.

@@ -1,1 +1,0 @@
-Clears the contents of this memory backend so that it does not contain any entries.

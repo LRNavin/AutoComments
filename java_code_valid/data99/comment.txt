@@ -1,1 +1,0 @@
-When a MenuElement receives an VAR0 from a MouseListener, it should never process the VAR0 directly. Instead all MenuElements should call this method with the VAR0.

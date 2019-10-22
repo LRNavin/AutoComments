@@ -1,1 +1,0 @@
-Function to remove remote sessions when primary server is up.

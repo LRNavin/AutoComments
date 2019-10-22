@@ -44,12 +44,11 @@ def extract_replacements(to_write_path, code, comment):
         for v in varList:
             name = v.split(" ")[-1]
             varEncDict[name] = "VAR" + str(i)
-            varDecDict["VAR" + str(i)] = name
-            i = i + 1
-        
+            varDecDict["VAR" + str(i)] = name 
+            i = i+1
         for name in varEncDict:
-            code = code.replace(name,varEncDict[name])
-            comment = comment.replace(name,varEncDict[name])
+            code = code.replace(name, varEncDict[name])
+            comment = comment.replace(name, varEncDict[name])
         
         save_comment_in_txtfile(to_write_path, comment)
         save_code_in_javafile(to_write_path, code)

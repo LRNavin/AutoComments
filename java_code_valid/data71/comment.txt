@@ -1,1 +1,0 @@
-Ends the current element context and gets back to the parent context. This method should be called at the end of the endElement method of derived classes.

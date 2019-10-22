@@ -1,1 +1,0 @@
-Constructs a new <code>PrincipalHolder</code> object with its <code>value</code> field initialized to <code>null</code>.

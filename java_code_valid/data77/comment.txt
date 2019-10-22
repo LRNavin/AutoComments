@@ -1,1 +1,0 @@
-Creates the listener responsible for getting property change events from the selection model.

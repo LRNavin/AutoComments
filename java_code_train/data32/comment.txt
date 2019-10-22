@@ -1,1 +1,0 @@
-Returns date parsed from string in format: yyyy.MM.dd.

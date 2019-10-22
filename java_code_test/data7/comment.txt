@@ -1,1 +1,0 @@
-Toggle the badge visibility in the UI.

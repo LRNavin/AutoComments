@@ -1,1 +1,0 @@
-The locator should NOT hold any cache data and thus this method is  overriden by an empty method.

@@ -1,1 +1,0 @@
-Constructs a new instance with the specified message.

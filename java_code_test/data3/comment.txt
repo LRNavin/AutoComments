@@ -1,1 +1,0 @@
-Propagates new points-to information of node VAR0 to all its successors.

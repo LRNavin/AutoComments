@@ -1,1 +1,0 @@
-Writes a table to the block.  Returns the offset in this block where the table was written, or -1 if there was insufficient room in the block to write the entire table.

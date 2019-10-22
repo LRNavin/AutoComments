@@ -1,1 +1,0 @@
-Formats time from VAR0onds to hh:mm:ss string format.

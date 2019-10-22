@@ -1,1 +1,0 @@
-javax.net.ssl.SSLEngine#unwrap(ByteBuffer src, ByteBuffer[] dsts) ReadOnlyBufferException should be thrown.

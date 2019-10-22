@@ -1,1 +1,0 @@
-Increments the current number of entries whose value has been overflowed to disk by a given amount.

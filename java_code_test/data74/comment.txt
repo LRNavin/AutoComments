@@ -1,1 +1,0 @@
-Parse date in RFC1123 format, and return its value as epoch

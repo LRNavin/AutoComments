@@ -1,1 +1,0 @@
-Reads an unsigned integer (32-bit) value from a byte array at a given VAR1. The value is converted to the opposed endian system while reading.

@@ -1,1 +1,0 @@
-Reset all elements used for creating a new action.

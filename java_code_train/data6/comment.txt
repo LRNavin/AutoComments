@@ -1,1 +1,0 @@
-Performs a deep copy on <i>VAR0</i>.

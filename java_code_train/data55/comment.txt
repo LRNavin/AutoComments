@@ -1,1 +1,0 @@
-Convert a path component that contains backslash escape sequences to a literal string. This is necessary when you want to explicitly refer to a path that contains globber metacharacters.

@@ -1,1 +1,0 @@
-Draws the specified image centered at (<em>VAR0</em>, <em>VAR1</em>), rotated given number of VAR5, and rescaled to the specified bounding boVAR0. The supported image formats are JPEG, PNG, and GIF.

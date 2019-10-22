@@ -1,1 +1,0 @@
-Forwards the request to the real <code>InputStream</code>.

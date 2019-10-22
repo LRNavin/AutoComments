@@ -1,1 +1,0 @@
-Creates a period from the given millisecond VAR0 with the standard period type and ISO rules, ensuring that the calculation is performed with the time-only period type. <p> The calculation uses the hour, minute, second and millisecond fields.

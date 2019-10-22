@@ -1,1 +1,0 @@
-Find a value of one of the given VAR0 in the given collection: searching the collection for a value of the first type, then searching for a value of the second type, etc.

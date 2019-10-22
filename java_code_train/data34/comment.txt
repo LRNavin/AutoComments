@@ -1,1 +1,0 @@
-Create a VAR0 service instance that allows the use of a custom service URL.

@@ -1,1 +1,0 @@
-Specifies whether filtered attributes are to contain both attribute descriptions and values, or just attribute descriptions.
