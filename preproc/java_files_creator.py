@@ -45,7 +45,7 @@ def extract_replacements(to_write_path, code, comment):
             name = v.split(" ")[-1]
             varEncDict[name] = "VAR" + str(i)
             varDecDict["VAR" + str(i)] = name 
-        
+            i = i+1
         for name in varEncDict:
             code = code.replace(name, varEncDict[name])
             comment = comment.replace(name, varEncDict[name])
