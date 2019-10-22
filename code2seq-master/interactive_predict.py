@@ -39,8 +39,8 @@ class InteractivePredictor:
         raw_data_snippets = self.read_raw_code_data(data_file)
         for ind, snippet in enumerate(raw_data_snippets):
             predict_lines = self.get_ast_path_for_snippet(snippet)
-            print(f"Extracted AST for Snippet - {ind}")
-            print(f"AST Size - {len(predict_lines)}")
+            # print(f"Extracted AST for Snippet - {ind}")
+            # print(f"AST Size - {len(predict_lines)}")
             ast_fetaure_list.extend(predict_lines)
         return ast_fetaure_list
 

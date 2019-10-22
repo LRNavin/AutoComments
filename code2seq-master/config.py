@@ -5,8 +5,8 @@ class Config:
         config.NUM_EPOCHS = 3000
         config.SAVE_EVERY_EPOCHS = 1
         config.PATIENCE = 10
-        config.BATCH_SIZE = 512
-        config.TEST_BATCH_SIZE = 256
+        config.BATCH_SIZE = 64 #512
+        config.TEST_BATCH_SIZE = 64
         config.READER_NUM_PARALLEL_BATCHES = 1
         config.SHUFFLE_BUFFER_SIZE = 10000
         config.CSV_BUFFER_SIZE = 100 * 1024 * 1024  # 100 MB
