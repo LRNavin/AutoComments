@@ -46,3 +46,15 @@ For more information about the results and a detailed description of the 2 metho
 
 Deep Code: https://xin-xia.github.io/publication/icpc182.pdf
 Code2Vec: https://arxiv.org/abs/1803.09473
+
+## :busts_in_silhouette: Group 3 Team Members 
+
+[Rafail Skoulos](https://github.com/RafailSkoulos17)
+
+[Navin Raj Prabhu](https://github.com/LRNavin)
+
+[Thomas Pfann](https://github.com/ThomasPf)
+
+[Jonathan Katzy](https://github.com/jkatzy)
+
+
