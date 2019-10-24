@@ -12,6 +12,18 @@ Code2Vec: Learning Distributed Representations of Code by Alon et al. with the p
 The dataset that we will use is the same dataset used by the Deep Code Comment Generation paper, this is a dataset of more than 500,000 code snippets including comments.
 This also gives us a baseline against which to compare.
 
+## :scroll: System Overview 
+The pipeline of the system is:
+1. Extract the ASTs from the code snippets-comment pairs.
+2. Use the extracted ASTs to train the model.
+3. Test the trained model on the test data.
+
+The high-level pipeline is shown in the following image:
+<p align="center">
+  <img src="https://github.com/LRNavin/AutoComments/blob/master/images/pipeline.png" height="111" width="600">
+</p>
+
+
 ## Papers:
 
 Deep Code: https://xin-xia.github.io/publication/icpc182.pdf
