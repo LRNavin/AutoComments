@@ -1,11 +1,18 @@
 # AutoComments
 
 ## :pencil2: Description: 
-
+### Motivation
 We want to create a deep Neural Network that can automatically generate comments for code snippets passed to it.
 The motivation behind this is that in software development and maintenance, developers spend around 59% of their time on program comprehension activities. Having comments that are generated automatically will hopefully cut this time down.
 In order to do this we will combine the recent paper,
 Code2Vec: Learning Distributed Representations of Code by Alon et al. with the paper Deep Code Comment Generation in order to make a better performing model using the newer Code2Vec encoding that was not used in the Deep Code Comment Generation paper.
+
+### Work done
+In this project, 2 experiments were conducted. For the first one, we used the Code2Seq code to create model which will generate comments for code snippets (functions) of Java instead of the function names. For the second one, we repeated the procedure followed in the first experiment with modified ASTs. In particular, we added the precific name of each variable to the AST in order to make the comments generated more descriptive. The evaluation of the experiments were conducted in terms of BLEU-4 score.
+
+The performance of the first experiment was poor (BLEU-4 score  6.08) while with the novelty introduced in the second experiment we achieved an important improvement (BLEU-4 score 10.08).  However, the performance achieved was much worse than the one achieved by X. HU (BLEU-4 score 38.17 )in \cite, because that our model was not able to produce long comments. Nevertheless, it predicted succesfully the shorter comments, as well as a part of the long ones. The reason for this behavior is that the Code2Seq was built to produce function names which are short, and not long sequences.
+
+All in all, an important main conclusion we can draw regarding our best model, is that with the novelty introduced with the variable names in the AST, it is capable of understanding the syntactic and semantic meaning of Java code regarding the automatic comment generation, but suffers from the incapability to generate longer comments and complete.
 
 ## :page_facing_up: Dataset: 
 
