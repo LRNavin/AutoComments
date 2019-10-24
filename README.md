@@ -23,6 +23,12 @@ The high-level pipeline is shown in the following image:
   <img src="https://github.com/LRNavin/AutoComments/blob/master/images/pipeline.png" height="111" width="600">
 </p>
 
+## :triangular_ruler: Network Architecture 
+The Encoder-Decoder architecture of this project is shown in the image below and is influenced by the [work](https://openreview.net/pdf?id=H1gKYo09tX) of U. Alon et al. 
+
+<p align="center">
+  <img src="https://github.com/LRNavin/AutoComments/blob/master/images/network_architecture.png" height="331" width="850">
+</p>
 
 ## Papers:
 
