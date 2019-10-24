@@ -42,9 +42,22 @@ The BLEU-4 score achieved in the test dataset is presented below:
 
 
 For more information about the results and a detailed description of the 2 methods used, please feel free to take a look at our project report that is included on this repository.
+
+
+## :office: Project Structure 
+The structure of the project is:
+
+*   [`JavaExtractor`](https://github.com/LRNavin/AutoComments/tree/master/data/JavaExtractor) This directory contains the necessary code for exctracting the ASTs from the dataset.
+*   [`code2seq_master`](https://github.com/LRNavin/AutoComments/tree/master/code2seq_master) This directory contains the original Code2Seq code.
+* [`data`](https://github.com/LRNavin/AutoComments/tree/master/data) here you can find a small portion of the data we used. We couldn't upload the whole dataset because of its size.
+*   [`preproc`](https://github.com/LRNavin/AutoComments/tree/master/preproc) Conatins all the necessary ptython files and neccesary scripts for the preprocessing and the proper execution of the AST extraction.
+*   [`scripts`](https://github.com/LRNavin/AutoComments/tree/master/scripts) Contains all the extra scripts used, like the perl script for the BLEU score extraction.
+*   [`bleu.py`](https://github.com/LRNavin/AutoComments/tree/master/bleu.py) Extracts the BLEU-4 score for a reference and a prediction file.
+
 ## Papers:
 
 Deep Code: https://xin-xia.github.io/publication/icpc182.pdf
+
 Code2Vec: https://arxiv.org/abs/1803.09473
 
 ## :busts_in_silhouette: Group 3 Team Members 
