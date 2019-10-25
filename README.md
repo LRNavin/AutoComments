@@ -5,12 +5,12 @@
 We want to create a deep Neural Network that can automatically generate comments for code snippets passed to it.
 The motivation behind this is that in software development and maintenance, developers spend around 59% of their time on program comprehension activities. Having comments that are generated automatically will hopefully cut this time down.
 In order to do this we will combine the recent paper,
-Code2Vec: Learning Distributed Representations of Code by Alon et al. with the paper Deep Code Comment Generation in order to make a better performing model using the newer Code2Vec encoding that was not used in the Deep Code Comment Generation paper.
+[Code2Vec: Learning Distributed Representations of Code](https://openreview.net/pdf?id=H1gKYo09tX) by Alon et al. with the paper [Deep Code Comment Generation](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5295&context=sis_research) by X. Hu et.al, so as to make a better performing model using the newer Code2Vec encoding that was not used in the Deep Code Comment Generation paper.
 
 ### Work done
 In this project, 2 experiments were conducted. For the first one, we used the Code2Seq code to create model which will generate comments for code snippets (functions) of Java instead of the function names. For the second one, we repeated the procedure followed in the first experiment with modified ASTs. In particular, we added the precific name of each variable to the AST in order to make the comments generated more descriptive. The evaluation of the experiments were conducted in terms of BLEU-4 score.
 
-The performance of the first experiment was poor (BLEU-4 score  6.08), while with the novelty introduced in the second experiment we achieved an important improvement (BLEU-4 score 10.08).  However, the performance achieved was much worse than the one achieved by X. HU (BLEU-4 score 38.17 )in [Deep Code Comment Generation paper](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5295&context=sis_research), because our model was not able to produce long comments. Nevertheless, it predicted succesfully the shorter comments, as well as a part of the long ones. The reason for this behavior is that the Code2Seq was built to produce function names which are short, and not long sequences.
+The performance of the first experiment was poor (BLEU-4 score  6.08), while with the novelty introduced in the second experiment we achieved an important improvement (BLEU-4 score 10.08).  However, the performance achieved was much worse than the one achieved by X. HU (BLEU-4 score 38.17 ) in Deep Code Comment Generation paper, because our model was not able to produce long comments. Nevertheless, it predicted succesfully the shorter comments, as well as a part of the long ones. The reason for this behavior is that the Code2Seq was built to produce function names which are short, and not long sequences.
 
 All in all, an important main conclusion we can draw regarding our best model, is that with the novelty introduced with the variable names in the AST, it is capable of understanding the syntactic and semantic meaning of Java code regarding the automatic comment generation. However suffers from the incapability to generate longer comments and complete.
 
@@ -48,7 +48,7 @@ The BLEU-4 score achieved in the test dataset is presented below:
 | Method-2      | 10.02          |
 
 
-For more information about the results and a detailed description of the 2 methods used, please feel free to take a look at our project report that is included on this repository.
+For more information about the results and a detailed description of the 2 methods used, please feel free to take a look at our project [report](https://github.com/LRNavin/AutoComments/tree/master/report/ML4SE_group_3_report.pdf) that is included on this repository.
 
 
 ## :office: Project Structure 
@@ -58,14 +58,15 @@ The structure of the project is:
 *   [`code2seq_master`](https://github.com/LRNavin/AutoComments/tree/master/code2seq_master) This directory contains the original Code2Seq code.
 * [`data`](https://github.com/LRNavin/AutoComments/tree/master/data) here you can find a small portion of the data we used. We couldn't upload the whole dataset because of its size.
 *   [`preproc`](https://github.com/LRNavin/AutoComments/tree/master/preproc) Conatins all the necessary ptython files and neccesary scripts for the preprocessing and the proper execution of the AST extraction.
+*   [`report`](https://github.com/LRNavin/AutoComments/tree/master/report) Contains the report for this project and its latex code.
 *   [`scripts`](https://github.com/LRNavin/AutoComments/tree/master/scripts) Contains all the extra scripts used, like the perl script for the BLEU score extraction.
 *   [`bleu.py`](https://github.com/LRNavin/AutoComments/tree/master/bleu.py) Extracts the BLEU-4 score for a reference and a prediction file.
 
 ## Papers:
 
-Deep Code: https://xin-xia.github.io/publication/icpc182.pdf
+[Code2Vec: Learning Distributed Representations of Code](https://openreview.net/pdf?id=H1gKYo09tX)
 
-Code2Vec: https://arxiv.org/abs/1803.09473
+[Deep Code Comment Generation](https://ink.library.smu.edu.sg/cgi/viewcontent.cgi?article=5295&context=sis_research) 
 
 ## :busts_in_silhouette: Group 3 Team Members 
 
