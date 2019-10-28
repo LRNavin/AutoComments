@@ -16,8 +16,9 @@ All in all, an important main conclusion we can draw regarding our best model, i
 
 ## :page_facing_up: Dataset: 
 
-The dataset that we will use is the same dataset used by the Deep Code Comment Generation paper, this is a dataset of more than 500,000 code snippets including comments.
-This also gives us a baseline against which to compare.
+The dataset that we used, is the same dataset used by the Deep Code Comment Generation paper, this is a dataset of more than 500,000 code snippets including comments.
+This also gave us a baseline against which to compare.
+This dataset can be found [here](https://github.com/xing-hu/DeepCom)
 
 ## :scroll: System Overview 
 The pipeline of the system is:
